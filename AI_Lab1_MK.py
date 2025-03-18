@@ -67,14 +67,14 @@ def filter_fighters():
 def search_fighters():
     query = search_entry.get().strip()
     if not query:
-        messagebox.showwarning("Warning", "Enter a search query")
+        messagebox.showwarning("Enter a search query")
         return
     
     filtered_df = df[(df['name'].str.contains(query, case=False)) | 
                      (df['nickname'].str.contains(query, case=False))]
     
     if filtered_df.empty:
-        messagebox.showinfo("No Results", "No fighters found!")
+        messagebox.showinfo("No fighters found!")
     else:
         update_table(filtered_df)
 
